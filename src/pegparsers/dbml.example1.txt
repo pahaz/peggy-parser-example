@@ -1,0 +1,99 @@
+Table core.user {
+  id "integer" [ pk, unique, default: 123, note: 'Number' ]
+  username varchar(255) [not null, unique]
+  role varchar
+  created_at timestamp
+  old "bigint unsigned"
+  user_id integer [ref: > users.id] // many-to-one
+  uid string [ref: < posts.user_id, ref: < reviews.user_id] // one to many
+}
+
+// table belonged to a schema
+Project project_name {
+  database_type: 'PostgreSQL'
+  Note: '''
+    # DBML - Database Markup Language
+    DBML (database markup language) is a simple, readable DSL language designed to define database structures.
+
+    ## Benefits
+
+    * It is simple, flexible and highly human-readable
+    * It is database agnostic, focusing on the essential
+    * Comes with a free, simple database visualiser at [dbdiagram.io](http://dbdiagram.io)
+  '''
+}
+
+Table posts as P [headercolor: #3498DB] {
+  id integer [primary key]
+  title varchar
+  body text [note: 'Content of the post']
+  user_id integer
+  status post_status
+  created_at timestamp [default: `now()`]
+  address varchar(255) [unique, not null, note: 'to include unit number']
+  status varchar [
+    note: '''
+    💸 1 = processing,
+    ✔️ 2 = shipped,
+    ❌ 3 = cancelled,
+    😔 4 = refunded
+    ''']
+
+    indexes {
+      (id, country) [pk] // composite primary key
+      created_at [name: 'created_at_index', note: 'Date']
+      booking_date
+      (country, booking_date) [unique]
+      booking_date [type: hash]
+      (`id*2`)
+      (`id*3`,`getdate()`)
+      (`id*3`,id)
+  }
+
+  Note: 'This is a note of this table'
+  XX: qweqwe
+  // or
+  xxx: 21
+  Note {
+    'This is a note of this table'
+  }
+
+}
+
+Enum post_status {
+  draft
+  published
+  private [note: 'visible via URL only']
+}
+
+enum job_status {
+    created [note: 'Waiting to be processed']
+    running
+    done
+    failure
+}
+
+Ref: posts.user_id > users.id // many-to-one
+
+
+//Short form:
+Ref name_optional: schema1.table1.column1 < schema2.table2.column2
+
+//Long form
+Ref name_optional {
+  schema1.table1.column1 < schema2.table2.column2
+}
+
+// Inline form
+Table schema2.table2 {
+    id integer
+    column2 integer [ref: > schema1.table1.column1]
+    id integer [ref: < posts.user_id, ref: < reviews.user_id] // one to many
+}
+
+TableGroup e-commerce1 {
+    merchants
+    countries
+}
+
+//Ref: merchant_periods.(merchant_id, country_code) > merchants.(id, country_code)

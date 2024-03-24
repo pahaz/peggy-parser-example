@@ -1,0 +1,1655 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dbml example1 1`] = `
+[
+  {
+    "alias": null,
+    "attrs": null,
+    "name": {
+      "type": "Literal",
+      "value": "core.user",
+    },
+    "rows": [
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "pk",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "unique",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "default",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "123",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "Number",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "not null",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "unique",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar(255)",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "username",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "role",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "timestamp",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "created_at",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "bigint unsigned",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "old",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "> users.id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "user_id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< posts.user_id",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< reviews.user_id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "string",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "uid",
+        },
+        "type": "TableColumn",
+      },
+    ],
+    "type": "Table",
+  },
+  "
+
+// table belonged to a schema
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "project_name",
+    },
+    "rows": [
+      {
+        "key": {
+          "type": "Literal",
+          "value": "database_type",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "PostgreSQL",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "Note",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "
+    # DBML - Database Markup Language
+    DBML (database markup language) is a simple, readable DSL language designed to define database structures.
+
+    ## Benefits
+
+    * It is simple, flexible and highly human-readable
+    * It is database agnostic, focusing on the essential
+    * Comes with a free, simple database visualiser at [dbdiagram.io](http://dbdiagram.io)
+  ",
+        },
+      },
+    ],
+    "type": "Project",
+  },
+  "
+
+",
+  {
+    "alias": {
+      "type": "Literal",
+      "value": "P",
+    },
+    "attrs": [
+      {
+        "key": {
+          "type": "Literal",
+          "value": "headercolor",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "#3498DB",
+        },
+      },
+    ],
+    "name": {
+      "type": "Literal",
+      "value": "posts",
+    },
+    "rows": [
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "primary key",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "title",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "Content of the post",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "text",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "body",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "user_id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "post_status",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "status",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "default",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "\`now()\`",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "timestamp",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "created_at",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "unique",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "not null",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "to include unit number",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar(255)",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "address",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "
+    💸 1 = processing,
+    ✔️ 2 = shipped,
+    ❌ 3 = cancelled,
+    😔 4 = refunded
+    ",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "status",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "indexes",
+        },
+        "type": "AttrBlock",
+        "value": "indexes {
+      (id, country) [pk] // composite primary key
+      created_at [name: 'created_at_index', note: 'Date']
+      booking_date
+      (country, booking_date) [unique]
+      booking_date [type: hash]
+      (\`id*2\`)
+      (\`id*3\`,\`getdate()\`)
+      (\`id*3\`,id)
+  }",
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "Note",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "This is a note of this table",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "XX",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "qweqwe",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "xxx",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "21",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "Note",
+        },
+        "type": "AttrBlock",
+        "value": "Note {
+    'This is a note of this table'
+  }",
+      },
+    ],
+    "type": "Table",
+  },
+  "
+
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "post_status",
+    },
+    "rows": [
+      {
+        "attrs": null,
+        "name": {
+          "type": "Literal",
+          "value": "draft",
+        },
+        "type": "EnumValue",
+      },
+      {
+        "attrs": null,
+        "name": {
+          "type": "Literal",
+          "value": "published",
+        },
+        "type": "EnumValue",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "visible via URL only",
+            },
+          },
+        ],
+        "name": {
+          "type": "Literal",
+          "value": "private",
+        },
+        "type": "EnumValue",
+      },
+    ],
+    "type": "Enum",
+  },
+  "
+
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "job_status",
+    },
+    "rows": [
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "Waiting to be processed",
+            },
+          },
+        ],
+        "name": {
+          "type": "Literal",
+          "value": "created",
+        },
+        "type": "EnumValue",
+      },
+      {
+        "attrs": null,
+        "name": {
+          "type": "Literal",
+          "value": "running",
+        },
+        "type": "EnumValue",
+      },
+      {
+        "attrs": null,
+        "name": {
+          "type": "Literal",
+          "value": "done",
+        },
+        "type": "EnumValue",
+      },
+      {
+        "attrs": null,
+        "name": {
+          "type": "Literal",
+          "value": "failure",
+        },
+        "type": "EnumValue",
+      },
+    ],
+    "type": "Enum",
+  },
+  "
+
+",
+  {
+    "name": null,
+    "ref": {
+      "attrs": null,
+      "direction": ">",
+      "left": {
+        "type": "Literal",
+        "value": "posts.user_id",
+      },
+      "right": {
+        "type": "Literal",
+        "value": "users.id",
+      },
+    },
+    "type": "Ref",
+  },
+  " // many-to-one
+
+
+//Short form:
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "name_optional",
+    },
+    "ref": {
+      "attrs": null,
+      "direction": "<",
+      "left": {
+        "type": "Literal",
+        "value": "schema1.table1.column1",
+      },
+      "right": {
+        "type": "Literal",
+        "value": "schema2.table2.column2",
+      },
+    },
+    "type": "Ref",
+  },
+  "
+
+//Long form
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "name_optional",
+    },
+    "ref": {
+      "attrs": null,
+      "direction": "<",
+      "left": {
+        "type": "Literal",
+        "value": "schema1.table1.column1",
+      },
+      "right": {
+        "type": "Literal",
+        "value": "schema2.table2.column2",
+      },
+    },
+    "type": "Ref",
+  },
+  "
+
+// Inline form
+",
+  {
+    "alias": null,
+    "attrs": null,
+    "name": {
+      "type": "Literal",
+      "value": "schema2.table2",
+    },
+    "rows": [
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "> schema1.table1.column1",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "column2",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< posts.user_id",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< reviews.user_id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+    ],
+    "type": "Table",
+  },
+  "
+
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "e-commerce1",
+    },
+    "rows": [
+      {
+        "name": {
+          "type": "Literal",
+          "value": "merchants",
+        },
+        "type": "TableGroupName",
+      },
+      {
+        "name": {
+          "type": "Literal",
+          "value": "countries",
+        },
+        "type": "TableGroupName",
+      },
+    ],
+    "type": "TableGroup",
+  },
+  "
+
+//Ref: merchant_periods.(merchant_id, country_code) > merchants.(id, country_code)
+",
+]
+`;
+
+exports[`dbml example2 1`] = `
+[
+  {
+    "alias": {
+      "type": "Literal",
+      "value": "P",
+    },
+    "attrs": [
+      {
+        "key": {
+          "type": "Literal",
+          "value": "headercolor",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "#3498DB",
+        },
+      },
+    ],
+    "name": {
+      "type": "Literal",
+      "value": "posts",
+    },
+    "rows": [
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "primary key",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "default",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "\`now()\`",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "timestamp",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "created_at",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "
+    💸 1 = processing,
+    ✔️ 2 = shipped,
+    ❌ 3 = cancelled,
+    😔 4 = refunded
+    ",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "status",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "indexes",
+        },
+        "type": "AttrBlock",
+        "value": "indexes {
+      (id, country) [pk] // composite primary key
+      created_at [name: 'created_at_index', note: 'Date']
+      booking_date
+      (country, booking_date) [unique]
+      booking_date [type: hash]
+      (\`id*2\`)
+      (\`id*3\`,\`getdate()\`)
+      (\`id*3\`,id)
+  }",
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "Note",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "This is a note of this table",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "XX",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "qweqwe",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "xxx",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "21",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "Note",
+        },
+        "type": "AttrBlock",
+        "value": "Note {
+    'This is a note of this table'
+  }",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "Content of the post",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "text",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "body",
+        },
+        "type": "TableColumn",
+      },
+    ],
+    "type": "Table",
+  },
+  "
+
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "e-comm.erce1",
+    },
+    "rows": [
+      {
+        "name": {
+          "type": "Literal",
+          "value": "merchants",
+        },
+        "type": "TableGroupName",
+      },
+      {
+        "name": {
+          "type": "Literal",
+          "value": "countries",
+        },
+        "type": "TableGroupName",
+      },
+    ],
+    "type": "TableGroup",
+  },
+  "
+
+//Ref: merchant_periods.(merchant_id, country_code) > merchants.(id, country_code)
+
+",
+  {
+    "name": null,
+    "ref": {
+      "attrs": null,
+      "direction": ">",
+      "left": {
+        "type": "Literal",
+        "value": "posts.user_id",
+      },
+      "right": {
+        "type": "Literal",
+        "value": "users.id",
+      },
+    },
+    "type": "Ref",
+  },
+  " // many-to-one
+
+//Short form:
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "name_optional",
+    },
+    "ref": {
+      "attrs": null,
+      "direction": "<",
+      "left": {
+        "type": "Literal",
+        "value": "schema1.table1.column1",
+      },
+      "right": {
+        "type": "Literal",
+        "value": "schema2.table2.column2",
+      },
+    },
+    "type": "Ref",
+  },
+  "
+
+//Long form
+",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "name_optional",
+    },
+    "ref": {
+      "attrs": null,
+      "direction": "<",
+      "left": {
+        "type": "Literal",
+        "value": "schema1.table1.column3",
+      },
+      "right": {
+        "type": "Literal",
+        "value": "schema2.table2.column3",
+      },
+    },
+    "type": "Ref",
+  },
+  "
+
+ /* some com */
+",
+  {
+    "alias": null,
+    "attrs": null,
+    "name": {
+      "type": "Literal",
+      "value": "core.user",
+    },
+    "rows": [
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "default",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "\`now()\`",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "timestamp",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "created_at",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< posts.user_id",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< reviews.user_id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "string",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "uid",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "user_id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "post_status",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "status",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "> users.id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "user_id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "bigint unsigned",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "old",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "not null",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "unique",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar(255)",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "username",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "pk",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "unique",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "default",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "123",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "Number",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "role",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "timestamp",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "created_at",
+        },
+        "type": "TableColumn",
+      },
+    ],
+    "type": "Table",
+  },
+  "
+
+ // test
+
+
+// table belonged to a schema
+ ",
+  {
+    "name": {
+      "type": "Literal",
+      "value": "project_name",
+    },
+    "rows": [
+      {
+        "key": {
+          "type": "Literal",
+          "value": "database_type",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "PostgreSQL",
+        },
+      },
+      {
+        "key": {
+          "type": "Literal",
+          "value": "Note",
+        },
+        "type": "AttrKV",
+        "value": {
+          "type": "Literal",
+          "value": "
+    # DBML - Database Markup Language
+    DBML (database markup language) is a simple, readable DSL language designed to define database structures.
+
+    ## Benefits
+
+    * It is simple, flexible and highly human-readable
+    * It is database agnostic, focusing on the essential
+    * Comes with a free, simple database visualiser at [dbdiagram.io](http://dbdiagram.io)
+  ",
+        },
+      },
+    ],
+    "type": "Project",
+  },
+  "
+
+ /* some com */
+",
+  {
+    "alias": null,
+    "attrs": null,
+    "name": {
+      "type": "Literal",
+      "value": "core.user",
+    },
+    "rows": [
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "default",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "\`now()\`",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "timestamp",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "created_at",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< posts.user_id",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< reviews.user_id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "string",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "uid",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "> users.id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "user_id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "bigint unsigned",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "old",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "not null",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "unique",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar(255)",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "username",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "pk",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "unique",
+            },
+            "type": "AttrK",
+            "value": null,
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "default",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "123",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "note",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "Number",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "varchar",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "role",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "timestamp",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "created_at",
+        },
+        "type": "TableColumn",
+      },
+    ],
+    "type": "Table",
+  },
+  "
+
+
+// Inline form
+",
+  {
+    "alias": null,
+    "attrs": null,
+    "name": {
+      "type": "Literal",
+      "value": "schema2.table2",
+    },
+    "rows": [
+      {
+        "attrs": null,
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "> schema1.table1.column1",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "column2",
+        },
+        "type": "TableColumn",
+      },
+      {
+        "attrs": [
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< posts.user_id",
+            },
+          },
+          {
+            "key": {
+              "type": "Literal",
+              "value": "ref",
+            },
+            "type": "AttrKV",
+            "value": {
+              "type": "Literal",
+              "value": "< reviews.user_id",
+            },
+          },
+        ],
+        "datatype": {
+          "type": "Literal",
+          "value": "integer",
+        },
+        "name": {
+          "type": "Literal",
+          "value": "id",
+        },
+        "type": "TableColumn",
+      },
+    ],
+    "type": "Table",
+  },
+  "
+",
+]
+`;
