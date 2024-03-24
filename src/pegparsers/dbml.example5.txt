@@ -1,78 +1,59 @@
-// source: https://github.com/techschool/simplebank/blob/master/doc/db.dbml
+// source: https://raw.githubusercontent.com/notiz-dev/prisma-dbml-generator/955d62a3c34f2d5028902af3acf349cc1e91c60a/prisma/dbml/schema.dbml
 
-Project simple_bank {
-  database_type: 'PostgreSQL'
-  Note: '''
-    # Simple Bank Database
-  '''
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table User {
+  id Int [pk, increment]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  email String [unique, not null]
+  name String
+  posts Post [not null]
+  profile Profile
 }
 
-Table users as U {
-  username varchar [pk]
-  role varchar [not null, default: 'depositor']
-  hashed_password varchar [not null]
-  full_name varchar [not null]
-  email varchar [unique, not null]
-  is_email_verified bool [not null, default: false]
-  password_changed_at timestamptz [not null, default: '0001-01-01']
-  created_at timestamptz [not null, default: `now()`]
+Table Profile {
+  id Int [pk, increment]
+  bio String
+  user User [not null]
+  userId Int [unique, not null]
+
+  Note: 'User profile'
 }
 
-Table verify_emails {
-  id bigserial [pk]
-  username varchar [ref: > U.username, not null]
-  email varchar [not null]
-  secret_code varchar [not null]
-  is_used bool [not null, default: false]
-  created_at timestamptz [not null, default: `now()`]
-  expired_at timestamptz [not null, default: `now() + interval '15 minutes'`]
+Table Post {
+  id Int [pk, increment]
+  title String [not null, default: '']
+  content String
+  published Boolean [not null, default: false]
+  author User
+  authorId Int
+  categories Category [not null]
 }
 
-Table accounts as A {
-  id bigserial [pk]
-  owner varchar [ref: > U.username, not null]
-  balance bigint [not null]
-  currency varchar [not null]
-  created_at timestamptz [not null, default: `now()`]
+Table Category {
+  id Int [pk, increment]
+  name String [not null]
+  posts Post [not null]
+}
 
-  Indexes {
-    owner
-    (owner, currency) [unique]
+Table Token {
+  id Int [pk, increment]
+  device String [not null]
+  operatingSystem String [not null]
+
+  indexes {
+    (device, operatingSystem) [unique]
   }
 }
 
-Table entries {
-  id bigserial [pk]
-  account_id bigint [ref: > A.id, not null]
-  amount bigint [not null, note: 'can be negative or positive']
-  created_at timestamptz [not null, default: `now()`]
-
-  Indexes {
-    account_id
-  }
+Table CategoryToPost {
+  categoriesId Int [ref: > Category.id]
+  postsId Int [ref: > Post.id]
 }
 
-Table transfers {
-  id bigserial [pk]
-  from_account_id bigint [ref: > A.id, not null]
-  to_account_id bigint [ref: > A.id, not null]
-  amount bigint [not null, note: 'must be positive']
-  created_at timestamptz [not null, default: `now()`]
+Ref: Profile.userId - User.id [delete: Cascade]
 
-  Indexes {
-    from_account_id
-    to_account_id
-    (from_account_id, to_account_id)
-  }
-}
-
-Table sessions {
-  id uuid [pk]
-  username varchar [ref: > U.username, not null]
-  refresh_token varchar [not null]
-  user_agent varchar [not null]
-  client_ip varchar [not null]
-  is_blocked boolean [not null, default: false]
-  expires_at timestamptz [not null]
-  created_at timestamptz [not null, default: `now()`]
-}
+Ref: Post.authorId > User.id [delete: Set Null]

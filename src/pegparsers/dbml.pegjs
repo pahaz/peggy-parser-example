@@ -75,12 +75,15 @@ attrItem
   / key:PropertyValue { return { type: "AttrK", key: key, value: null }; }
 
 PropertyName "name"
-  = StringLiteral
-  / [a-zA-Z0-9_><\.)(-]+ { return { type: "Literal", value: text().trim() } }
+  = StringLiteral "." StringLiteral { return { type: "Literal", value: text() } }
+  / StringLiteral
+  / [a-zA-Z0-9_><.-]+ "(" [^)]* ")" { return { type: "Literal", value: text() } }
+  / [a-zA-Z0-9_><.-]+ { return { type: "Literal", value: text().trim() } }
 
 PropertyValue "value"
   = StringLiteral
-  / [a-zA-Z0-9 _><\.#`)(-]+ { return { type: "Literal", value: text().trim() } }
+  / [a-zA-Z0-9 ._><#-]+ "(" [^)]* ")" { return { type: "Literal", value: text() } }
+  / [a-zA-Z0-9 ._><#)(-]+ { return { type: "Literal", value: text().trim() } }
 
 // SOURCE: https://github.com/peggyjs/peggy/blob/main/examples/javascript.pegjs
 // ----- A.1 Lexical Grammar -----
@@ -159,7 +162,10 @@ HexDigit
   = [0-9a-f]i
 
 StringLiteral "string"
-  = "'''" chars:ThripleStringCharacter* "'''" {
+  = "`" chars:BacktickStringCharacter* "`" {
+      return { type: "Literal", value: text() };
+    }
+  / "'''" chars:ThripleStringCharacter* "'''" {
       return { type: "Literal", value: chars.join("") };
     }
   / '"' chars:DoubleStringCharacter* '"' {
@@ -168,6 +174,10 @@ StringLiteral "string"
   / "'" chars:SingleStringCharacter* "'" {
       return { type: "Literal", value: chars.join("") };
     }
+
+BacktickStringCharacter
+  = !("`" / "\\" / LineTerminator) SourceCharacter { return text(); }
+  / "\\" sequence:EscapeSequence { return sequence; }
 
 ThripleStringCharacter
   = !("'''" / "\\") SourceCharacter { return text(); }
